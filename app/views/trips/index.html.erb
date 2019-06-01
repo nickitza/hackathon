@@ -1,12 +1,31 @@
 <% if current_user.trips == 0 %>
   <h1>You have no locations planned.</h1>
-  <%= link_to "Add Your First Trip", new_trip_location_path(@trip), class: "ui button green inverted"%>
+  <%= link_to "Add Your First Trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
   <%= link_to "Back To Trips", trips_path, class: "ui button secondary inverted"%>
 <% else %>
-<h1> Your Trips <%= @trip.name %> </h1>
-  <%= link_to "Add Another Location", new_trip_location_path(@trip), class: "ui button green inverted"%>
+<h1> Your Trips </h1>
+  <%= link_to "Add a trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
   <%= link_to "Back To Trips", trips_path, class: "ui button secondary inverted"%>
 <hr>
-<p></p>
+    <% @trips.each do |trip|%>
+    <div class="ui card">
+    
+  <div class="ui slide masked reveal image">
+    <img src="/images/avatar/large/jenny.jpg" class="visible content">
+    <img src="/images/avatar/large/elliot.jpg" class="hidden content">
+  </div>
+  <div class="content">
+    <h2 class="header"> <%= link_to trip.name %></h2>
+    <div class="meta">
+      <span class="date">Created in Sep 2014</span>
+    </div>
+  </div>
+  <div class="extra content">
+   <a class = 'ui green button', trip_locations_path(@trip)> 
+       See Locations
+   </a>
+  </div>
+</div>
+    <% end%>
 <% end %>
 
