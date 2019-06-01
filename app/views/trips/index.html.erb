@@ -17,13 +17,13 @@
   <div class="content">
     <h2 class="header"> <%= link_to trip.name %></h2>
     <div class="meta">
-      <span class="date">Created in Sep 2014</span>
+      <span class="date">  <%= trip.created_at %> </span>
     </div>
   </div>
   <div class="extra content">
-   <a class = 'ui green button', trip_locations_path(@trip)> 
-       See Locations
-   </a>
+    <div class= 'ui gray button'>
+  <%= link_to 'See Locations', trip_locations_path(trip.id)%>
+   </div>
   </div>
 </div>
     <% end%>
