@@ -15,7 +15,7 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = current_user.trips(trip_params)
+    @trip = current_user.trips.new(trip_params)
     if @trip.save
       redirect_to trips_path
     else
@@ -24,7 +24,8 @@ class TripsController < ApplicationController
   end
 
   def edit
-    render: 'form'
+     render partial: 'form'
+    render partial: 'form'
   end
 
   def update
@@ -42,7 +43,7 @@ class TripsController < ApplicationController
 
   private
  def trip_params
-   params.require(:trip).permit(:name)
+   params.require(:trip).permit(:name, :user_id)
  end
 
  def set_trip
