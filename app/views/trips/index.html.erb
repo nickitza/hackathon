@@ -1,39 +1,32 @@
 <% if current_user.trips == 0 %>
   <h1>You have no locations planned.</h1>
   <%= link_to "Add Your First Trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
-  <%= link_to "Back To Trips", trips_path, class: "ui button secondary inverted"%>
 <% else %>
-<h1> Your Trips </h1>
-  <%= link_to "Add a trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
-  <%= link_to "Back To Trips", trips_path, class: "ui button secondary inverted"%>
-<hr>
-<br />
+    <h1> Your Trips </h1>
+    <%= link_to "Add a trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
+    <hr>
+    <br />
     <div class='ui centered stackable grid', id='trips'>
-                <% @trips.each do |trip|%>
-                <div class="ui card">
-                     <div class="ui image">
+        <% @trips.each do |trip|%>
+            <div class="ui card">
+                <div class="ui image">
                     <img src=<%= trip.image%> >
-                    </div>
-                    <div class="content">
-                        <h2 class="header"> <%= link_to trip.name %></h2>
-                        <div class="meta">
+                </div>
+                <div class="content">
+                    <h2 class="header"> <%= link_to trip.name %></h2>
+                    <div class="meta">
                         <span class="date">  <%= trip.created_at %> </span>
                     </div>
-                    </div>
-                    <div class="extra content">
-                        <div class= 'ui gray button'>
-                    <%= link_to 'See Locations', trip_locations_path(trip.id)%>
-                        </div>
-                        <div class= 'ui red inverted button'>
-                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete  %>
-                    </div>
                 </div>
-            
+                <div class="extra content">
+                    <%= link_to 'See Locations', trip_locations_path(trip.id), class: 'ui green button inverted'%>
+                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete, class: 'ui red inverted button' %>
+                </div>
             </div>
-                <% end%>
+        <% end%>
         <br />
     </div>
-  
+
 <% end %>
     
    
