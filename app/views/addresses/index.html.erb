@@ -1,4 +1,4 @@
-<% if @address.length == 0 %>
+<% if @location.address.length == 0 %>
   <h1>You have no addresses.</h1>
   <%= link_to "Add Your First Addres", new_location_address_path(@location), class: "ui button green inverted"%>
   <%= link_to "Back To Trips", trip_locations_path(@location.trip_id), class: "ui button secondary inverted"%>
@@ -18,10 +18,10 @@
         Meta data can go here
       </div>
       <div class="description">
-        <%= @address.street %>
-        <%= @address.city %>
-        <%= @address.state%>
-        <%= @address.zip%>
+        <%= @location.address.street %>
+        <%= @location.address.city %>
+        <%= @location.address.state%>
+        <%= @location.address.zip%>
       </div>
     </div>
     <div class="content">
