@@ -1,6 +1,6 @@
 <% if current_user.trips == 0 %>
   <h1>You have no locations planned.</h1>
-  <%= link_to "Add Your First Location", new_trip_location_path(@trip), class: "ui button green inverted"%>
+  <%= link_to "Add Your First Trip", new_trip_location_path(@trip), class: "ui button green inverted"%>
   <%= link_to "Back To Trips", trips_path, class: "ui button secondary inverted"%>
 <% else %>
 <h1> Your Trips <%= @trip.name %> </h1>
