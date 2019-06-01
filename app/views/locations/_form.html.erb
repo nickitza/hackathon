@@ -1,0 +1,10 @@
+<%= form_with(model: [@trip, @location], local: true, class: "ui form") do |f| %>
+  <div class = "field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true, class: "input" %>
+  </div>
+    <%= f.label :days %>
+    <%= f.text_field :days, class: "input" %>
+
+  <%= f.submit nil, class: "ui button green inverted"%>
+  <% end %>
