@@ -26,8 +26,7 @@
       </div>
     </div>
     <div class="content">
-      <%= link_to "View Address", location_addresses_path(location), class: "ui mini button green inverted"%>
-      <%= link_to "Edit Location", edit_trip_location_path(@trip, location), class: "ui mini button secondary inverted"%><br />
+      <%= link_to "Edit Location", edit_trip_location_path(@trip, location), class: "ui mini button secondary inverted"%>
       <%= link_to "Remove Location", trip_location_path(@trip, location),method: :delete, class: "ui mini button red inverted"%>
     </div>
   </div>

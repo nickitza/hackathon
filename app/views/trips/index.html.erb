@@ -3,30 +3,28 @@
   <%= link_to "Add Your First Trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
 <% else %>
     <h1> Your Trips </h1>
-    <%= link_to "Add a trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
+    <%= link_to "Add A Trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
     <hr>
     <br />
-    <div class='ui centered stackable grid', id='trips'>
-                <% @trips.each do |trip|%>
-                <div class="ui card">
-
-            
-                     <div class="ui image">
+    <div class='ui centered stackable cards grid'>
+        <% @trips.each do |trip|%>
+            <div class="ui card">
+                <div class="ui image">
                     <img src=<%= trip.image%> >
-                    </div>
-                    <div class="content">
-                        <h2 class="header"> <%= link_to trip.name %></h2>
-                        <div class="meta">
-                    </div>
-                    <div class="extra content">
-                  
-                    <%= link_to 'See Locations', trip_locations_path(trip.id), class: 'ui green button inverted'%>
-                    <%= link_to 'Edit Trip', edit_trip_path(trip.id), class: 'ui secondary button inverted' %>
+                </div>
+                <div class="content">
+                    <h2 class="header"> <%= link_to trip.name %></h2>
+                </div>
+                <div class="extra content">
+                    <%= link_to 'See Locations', trip_locations_path(trip.id), class: 'ui tiny green button inverted'%>
+                    <%= link_to 'Edit Trip', edit_trip_path(trip.id), class: 'ui tiny secondary button inverted' %>
                     <br />
                     <br />
-                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete, class: 'ui red inverted button'  %>
-           
-                    <%end%>
+                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete, class: 'ui tiny red inverted button'  %>
+                </div>
+            </div>
+        <%end%>
+    </div>
 <% end %>
     
    
