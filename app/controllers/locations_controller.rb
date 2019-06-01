@@ -15,13 +15,15 @@ class LocationsController < ApplicationController
   end
 
   def create
+    add_atts = params[:location][:address_attributes]
     @location = @trip.locations.new(location_params)
     if @location.save
+      a = @location.create_address(street: add_atts[:street], city: add_atts[:city], state: add_atts[:state], zip: add_atts[:zip])
+      # binding.pry
       redirect_to trip_locations_path(@trip)
     else
       render :new
     end
-
   end
 
   def edit
@@ -53,6 +55,7 @@ class LocationsController < ApplicationController
   def location_params
     params.require(:location).permit(:name, :days)
   end
+  
 
 
 end

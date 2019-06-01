@@ -19,17 +19,13 @@
                         <div class="meta">
                     </div>
                     <div class="extra content">
-                        <div class= 'ui gray button'>
-                    <%= link_to 'See Locations', trip_locations_path(trip.id)%>
-                        </div>
-                    <div class= 'ui gray button'>
-                    <%= link_to 'Edit Trip', edit_trip_path(trip.id) %>
-                    </div>
+                  
+                    <%= link_to 'See Locations', trip_locations_path(trip.id), class: 'ui green button inverted'%>
+                    <%= link_to 'Edit Trip', edit_trip_path(trip.id), class: 'ui secondary button inverted' %>
                     <br />
                     <br />
-                        <div class= 'ui red inverted button'>
-                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete  %>
-                    </div>
+                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete, class: 'ui red inverted button'  %>
+           
                     <%end%>
 <% end %>
     
