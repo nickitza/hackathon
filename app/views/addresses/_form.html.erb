@@ -1,32 +1,22 @@
-<%= form_for [@location, @address] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body, required: true %>
+<h1><%= @location.id ? 'Edit Address' : 'Create Address' %></h1>
+<%= form_with [@location, @address] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_area :name, placeholder: "Name Of Address", class: "input" %>
   <br />
-  <%= f.label :author %>
-  <%= f.text_field :author, placeholder: 'Leave Blank To Remain Anonymous' %>
+  <%= f.label :street %>
+  <%= f.text_area :street, placeholder: "Street Name", class: "input" %>
   <br />
-  <%= f.submit %>
+  <%= f.label :city %>
+  <%= f.text_area :city, placeholder: "City Name", class: "input" %>
+  <br />
+  <%= f.label :state %>
+  <%= f.text_area :state, placeholder: "State Name", class: "input" %>
+  <br />
+  <%= f.label :zip %>
+  <%= f.text_field :zip, placeholder: 'Zippity' %>
+  <br />
+  <%= f.submit nil, class: "ui button green" %>
 
 
 
-  <div class="ui inverted segment">
-  <div class="ui inverted form">
-    <div class="two fields">
-      <div class="field">
-        <label>First Name</label>
-        <input placeholder="First Name" type="text">
-      </div>
-      <div class="field">
-        <label>Last Name</label>
-        <input placeholder="Last Name" type="text">
-      </div>
-    </div>
-    <div class="inline field">
-      <div class="ui checkbox">
-        <input type="checkbox" tabindex="0" class="hidden">
-        <label>I agree to the terms and conditions</label>
-      </div>
-    </div>
-    <div class="ui submit button">Submit</div>
-  </div>
-</div>
+  
