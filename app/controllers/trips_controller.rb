@@ -25,6 +25,7 @@ class TripsController < ApplicationController
 
   def edit
      render partial: 'form'
+    render partial: 'form'
   end
 
   def update
