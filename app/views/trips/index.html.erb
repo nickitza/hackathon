@@ -8,11 +8,11 @@
   <%= link_to "Back To Trips", trips_path, class: "ui button secondary inverted"%>
 <hr>
 <br />
-    <div class='ui centered grid', id='trips'>
+    <div class='ui centered stackable grid', id='trips'>
                 <% @trips.each do |trip|%>
                 <div class="ui card">
                      <div class="ui image">
-                    <img src=<%= trip.image %>>
+                    <img src=<%= trip.image%> >
                     </div>
                     <div class="content">
                         <h2 class="header"> <%= link_to trip.name %></h2>

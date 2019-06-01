@@ -52,4 +52,5 @@ class LocationsController < ApplicationController
     params.require(:location).permit(:name, :days)
   end
 
+
 end

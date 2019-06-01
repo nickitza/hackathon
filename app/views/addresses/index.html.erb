@@ -1,0 +1,34 @@
+<% if @address.length == 0 %>
+  <h1>You have no addresses.</h1>
+  <%= link_to "Add Your First Addres", new_location_address_path(@location), class: "ui button green inverted"%>
+  <%= link_to "Back To Trips", trip_locations_path(@location.trip_id), class: "ui button secondary inverted"%>
+<% else %>
+<h1>Showing Addresses for Location: <%= @location.name %> </h1>
+  <%= link_to "Add Another Address", new_location_address_path(@location), class: "ui button green inverted"%>
+  <%= link_to "Back To Trips", trip_locations_path(@location.trip_id), class: "ui button secondary inverted"%>
+<hr />
+
+<div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        <%= address.name.upcase %>
+      </div>
+      <div class="meta">
+        Meta data can go here
+      </div>
+      <div class="description">
+        <%= @address.street %>
+        <%= @address.city %>
+        <%= @address.state%>
+        <%= @address.zip%>
+      </div>
+    </div>
+    <div class="content">
+    <%= link_to "Remove Location", trip_location_path(@trip, location),method: :delete, class: "ui mini button red inverted"%>
+    <%= link_to "Edit Location", edit_trip_location_path(@trip, location), class: "ui mini button secondary inverted"%>
+    </div>
+  </div>
+</div>
+
+<% end %>
