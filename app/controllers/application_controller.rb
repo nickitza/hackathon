@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
- willard
+  before_action :authenticate_user!
 
 end
