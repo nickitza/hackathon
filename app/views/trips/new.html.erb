@@ -1,16 +1,2 @@
-<<<<<<< HEAD
 
-=======
-<h1>Add Trip</h1>
-<%= form_with(model: @trip, local: true) do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true, placeholder: "Trip Name" %>
-  </div>
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image, required: true, placeholder: "Enter Image URL" %>
-</div>
-<%end%>
->>>>>>> a37390f0b2f0bbf0959ed0ffbdf0e635f7a08141
 <%= render "form" %>
