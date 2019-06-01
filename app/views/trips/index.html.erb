@@ -7,25 +7,34 @@
   <%= link_to "Add a trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
   <%= link_to "Back To Trips", trips_path, class: "ui button secondary inverted"%>
 <hr>
-    <% @trips.each do |trip|%>
-    <div class="ui card">
-    
-  <div class="ui slide masked reveal image">
-    <img src="/images/avatar/large/jenny.jpg" class="visible content">
-    <img src="/images/avatar/large/elliot.jpg" class="hidden content">
-  </div>
-  <div class="content">
-    <h2 class="header"> <%= link_to trip.name %></h2>
-    <div class="meta">
-      <span class="date">  <%= trip.created_at %> </span>
+<br />
+    <div class='ui centered stackable grid', id='trips'>
+                <% @trips.each do |trip|%>
+                <div class="ui card">
+                     <div class="ui image">
+                    <img src=<%= trip.image%> >
+                    </div>
+                    <div class="content">
+                        <h2 class="header"> <%= link_to trip.name %></h2>
+                        <div class="meta">
+                        <span class="date">  <%= trip.created_at %> </span>
+                    </div>
+                    </div>
+                    <div class="extra content">
+                        <div class= 'ui gray button'>
+                    <%= link_to 'See Locations', trip_locations_path(trip.id)%>
+                        </div>
+                        <div class= 'ui red inverted button'>
+                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete  %>
+                    </div>
+                </div>
+            
+            </div>
+                <% end%>
+        <br />
     </div>
-  </div>
-  <div class="extra content">
-    <div class= 'ui gray button'>
-  <%= link_to 'See Locations', trip_locations_path(trip.id)%>
-   </div>
-  </div>
-</div>
-    <% end%>
+  
 <% end %>
+    
+   
 
