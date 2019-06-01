@@ -11,6 +11,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = @trip.locations.new()
+    @location.build_address
   end
 
   def create
@@ -24,6 +25,7 @@ class LocationsController < ApplicationController
   end
 
   def edit
+    @location.build_address if @location.address.nil?
   end
 
   def update

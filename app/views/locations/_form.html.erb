@@ -6,5 +6,19 @@
     <%= f.label :days %>
     <%= f.text_field :days, class: "input" %>
 
+    <%= f.fields_for :address do |fact| %>
+      <%= fact.label :street %>
+      <%= fact.text_field :street, class: "input" %>
+
+      <%= fact.label :city %>
+      <%= fact.text_field :city, class: "input" %>
+
+      <%= fact.label :state %>
+      <%= fact.text_field :state, class: "input" %>
+
+      <%= fact.label :zip %>
+      <%= fact.text_field :zip, class: "input" %>
+  <% end %>
+
   <%= f.submit nil, class: "ui button green inverted"%>
   <% end %>

@@ -22,7 +22,6 @@ class AddressesController < ApplicationController
 
   def new
     @address = @location.create_address()
-    render :new
   end
 
   def create
