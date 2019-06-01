@@ -1,5 +1,5 @@
 <h1><%= @location.id ? 'Edit Address' : 'Create Address' %></h1>
-<%= form_with [@location, @address] do |f| %>
+<%= form_with [@address] do |f| %>
   <%= f.label :name %>
   <%= f.text_area :name, placeholder: "Name Of Address", class: "input" %>
   <br />
