@@ -1,3 +1,12 @@
 <h1>Add Trip</h1>
+<%= form_with(model: @trip, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Trip Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.text_field :image, required: true, placeholder: "Enter Image URL" %>
+</div>
 
 <%= render "form" %>
