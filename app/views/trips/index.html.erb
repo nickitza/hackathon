@@ -10,6 +10,29 @@
                <% @trips.each do |trip|%>
                <div class="ui card">
 
+<<<<<<< HEAD
+=======
+            
+                     <div class="ui image">
+                    <img src=<%= trip.image%> >
+                    </div>
+                    <div class="content">
+                        <h2 class="header"> <%= link_to trip.name %></h2>
+                        <div class="meta">
+                    </div>
+                    <div class="extra content">
+                  
+                    <%= link_to 'See Locations', trip_locations_path(trip.id), class: 'ui green button inverted'%>
+                    <%= link_to 'Edit Trip', edit_trip_path(trip.id), class: 'ui secondary button inverted' %>
+                    <br />
+                    <br />
+                    <%= link_to 'Delete Trip', trip_path(trip.id), method: :delete, class: 'ui red inverted button'  %>
+           
+                    <%end%>
+<% end %>
+    
+   
+>>>>>>> c969cf85aa1bd927438967dc856cec2ba7d4493e
 
                     <div class="ui image">
                        <img src=<%= trip.image%> >
