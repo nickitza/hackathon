@@ -1,0 +1,11 @@
+<div class='ui container'>
+<%= form_with(model: @trip, local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name Of Trip" %>
+</div>
+<%= f.submit nil, class: "ui button green" %>
+</div>
+<%= link_to 'Back', trips_path, class: "ui button space gray" %>
+<% end %>
+</div>
