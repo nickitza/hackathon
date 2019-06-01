@@ -10,21 +10,21 @@
 
 <div class="ui cards">
 <% @trip.locations.each do |location|%>
-  <div class="card">
+  <div class="teal card">
     <div class="content">
       <div class="header">
         <%= location.name.upcase %>
       </div>
       <div class="meta">
-        Meta data can go here
+        Spending <%= location.days %> days here.
       </div>
       <div class="description">
-        Spending <%= location.days %> days here.
       </div>
     </div>
     <div class="content">
-    <%= link_to "Remove Location", trip_location_path(@trip, location),method: :delete, class: "ui mini button red inverted"%>
-    <%= link_to "Edit Location", edit_trip_location_path(@trip, location), class: "ui mini button secondary inverted"%>
+      <%= link_to "View Address", location_addresses_path(location), class: "ui mini button green inverted"%>
+      <%= link_to "Edit Location", edit_trip_location_path(@trip, location), class: "ui mini button secondary inverted"%><br />
+      <%= link_to "Remove Location", trip_location_path(@trip, location),method: :delete, class: "ui mini button red inverted"%>
     </div>
   </div>
 <% end %>
