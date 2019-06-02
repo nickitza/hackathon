@@ -1,6 +1,6 @@
 <% if current_user.trips == 0 %>
-  <h1>You have no locations planned.</h1>
-  <%= link_to "Add Your First Trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
+ <h1>You have no locations planned.</h1>
+ <%= link_to "Add Your First Trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
 <% else %>
     <h1> Your Trips </h1>
     <%= link_to "Add A Trip", new_trip_path(current_user.id), class: "ui button green inverted"%>
@@ -27,5 +27,3 @@
     </div>
 <% end %>
     
-   
-
